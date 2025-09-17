@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "StakedVotes",
+    "subtitle": "Built with Zara",
+    "description": "StakedVotes is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://ec872028aba043178276371bcb42e6b0-ucbd.vercel.app",
+    "splashImageUrl": "https://ec872028aba043178276371bcb42e6b0-ucbd.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://ec872028aba043178276371bcb42e6b0-ucbd.vercel.app/image.png",
+    "tagline": "StakedVotes",
+    "screenshotUrls": [
+      "https://ec872028aba043178276371bcb42e6b0-ucbd.vercel.app/screenshot.png",
+      "https://ec872028aba043178276371bcb42e6b0-ucbd.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://ec872028aba043178276371bcb42e6b0-ucbd.vercel.app/api/webhook"
+  }
+}
