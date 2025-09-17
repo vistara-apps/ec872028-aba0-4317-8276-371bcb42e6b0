@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export function Header({ onMenuToggle }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-40 bg-bg/80 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-40 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700">
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-4">
           <Button
@@ -20,12 +20,12 @@ export function Header({ onMenuToggle }: HeaderProps) {
           >
             <Menu className="w-4 h-4" />
           </Button>
-          
+
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">SV</span>
             </div>
-            <h1 className="text-xl font-bold text-textPrimary hidden sm:block">
+            <h1 className="text-xl font-bold text-gray-100 hidden sm:block">
               StakedVotes
             </h1>
           </div>

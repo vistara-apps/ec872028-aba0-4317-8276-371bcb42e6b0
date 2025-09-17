@@ -24,23 +24,23 @@ export function PollCard({ poll, variant }: PollCardProps) {
       <Card className={`p-6 space-y-4 ${isExpired ? 'opacity-75' : ''}`}>
         <div className="flex justify-between items-start gap-4">
           <div className="flex-1 space-y-2">
-            <div className="flex items-center gap-2 text-sm text-textSecondary">
+            <div className="flex items-center gap-2 text-sm text-gray-400">
               <span>by {formatAddress(poll.creatorAddress)}</span>
               <ReputationBadge tier="silver" />
               {poll.category && (
-                <span className="bg-surface px-2 py-1 rounded text-xs">
+                <span className="bg-gray-800 px-2 py-1 rounded text-xs">
                   {poll.category}
                 </span>
               )}
             </div>
-            
-            <h3 className="text-lg font-semibold text-textPrimary leading-tight">
+
+            <h3 className="text-lg font-semibold text-gray-100 leading-tight">
               {poll.question}
             </h3>
           </div>
           
           {isExpired && poll.outcome && (
-            <div className="flex items-center gap-1 text-accent text-sm">
+            <div className="flex items-center gap-1 text-green-500 text-sm">
               <Award className="w-4 h-4" />
               <span>Decided</span>
             </div>
@@ -57,16 +57,16 @@ export function PollCard({ poll, variant }: PollCardProps) {
                 key={index}
                 className={`p-3 rounded-md border transition-colors duration-200 ${
                   isWinner
-                    ? 'border-accent bg-accent/10'
+                    ? 'border-green-500 bg-green-500/10'
                     : isLeading
-                    ? 'border-primary bg-primary/10'
-                    : 'border-border bg-surface/50'
+                    ? 'border-blue-500 bg-blue-500/10'
+                    : 'border-gray-700 bg-gray-800/50'
                 }`}
               >
                 <div className="flex justify-between items-center">
-                  <span className="text-textPrimary">{option}</span>
+                  <span className="text-gray-100">{option}</span>
                   {(isLeading || isWinner) && (
-                    <TrendingUp className="w-4 h-4 text-accent" />
+                    <TrendingUp className="w-4 h-4 text-green-500" />
                   )}
                 </div>
               </div>
@@ -74,8 +74,8 @@ export function PollCard({ poll, variant }: PollCardProps) {
           })}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-border">
-          <div className="flex items-center gap-4 text-sm text-textSecondary">
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-gray-700">
+          <div className="flex items-center gap-4 text-sm text-gray-400">
             <div className="flex items-center gap-1">
               <Users className="w-4 h-4" />
               <span>{poll.totalVotes} votes</span>
@@ -95,7 +95,7 @@ export function PollCard({ poll, variant }: PollCardProps) {
               <Button
                 size="sm"
                 onClick={() => setShowVoteModal(true)}
-                className="bg-primary hover:bg-primary/90"
+                className="bg-blue-600 hover:bg-blue-700"
               >
                 Vote
               </Button>

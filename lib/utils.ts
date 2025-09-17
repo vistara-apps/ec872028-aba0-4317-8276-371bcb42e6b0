@@ -33,7 +33,7 @@ export function getReputationColor(tier: ReputationTier): string {
     case 'bronze':
       return 'text-orange-400';
     default:
-      return 'text-textSecondary';
+      return 'text-gray-400';
   }
 }
 

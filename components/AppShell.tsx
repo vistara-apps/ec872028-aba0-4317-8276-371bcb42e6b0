@@ -13,17 +13,17 @@ export function AppShell({ children }: AppShellProps) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="min-h-screen bg-gray-900">
       <Header onMenuToggle={() => setIsNavOpen(!isNavOpen)} />
-      
+
       {/* Mobile Navigation Overlay */}
       {isNavOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div 
-            className="absolute inset-0 bg-black/50" 
+          <div
+            className="absolute inset-0 bg-black/50"
             onClick={() => setIsNavOpen(false)}
           />
-          <div className="absolute top-0 left-0 w-64 h-full bg-surface border-r border-border">
+          <div className="absolute top-0 left-0 w-64 h-full bg-gray-800 border-r border-gray-700">
             <Navigation onClose={() => setIsNavOpen(false)} />
           </div>
         </div>

@@ -22,7 +22,7 @@ export function Navigation({ onClose }: NavigationProps) {
       <div className="lg:hidden p-4 space-y-2">
         {onClose && (
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-lg font-semibold text-textPrimary">Menu</h2>
+            <h2 className="text-lg font-semibold text-gray-100">Menu</h2>
             <Button variant="outline" size="sm" onClick={onClose}>
               <X className="w-4 h-4" />
             </Button>
@@ -44,7 +44,7 @@ export function Navigation({ onClose }: NavigationProps) {
 
       {/* Bottom Navigation */}
       {!onClose && (
-        <div className="bg-surface border-t border-border px-4 py-2">
+        <div className="bg-gray-800 border-t border-gray-700 px-4 py-2">
           <div className="flex justify-around">
             {navItems.map((item) => (
               <Button
