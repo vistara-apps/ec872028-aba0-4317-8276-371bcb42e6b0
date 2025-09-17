@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Clock, Users, TrendingUp, Award } from 'lucide-react';
+import Link from 'next/link';
+import { Clock, Users, TrendingUp, Award, ExternalLink } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { ReputationBadge } from './ReputationBadge';
@@ -91,6 +92,13 @@ export function PollCard({ poll, variant }: PollCardProps) {
           </div>
 
           <div className="flex gap-2">
+            <Link href={`/poll/${poll.pollId}`}>
+              <Button variant="outline" size="sm">
+                <ExternalLink className="w-4 h-4 mr-1" />
+                View Details
+              </Button>
+            </Link>
+
             {!isExpired ? (
               <Button
                 size="sm"
