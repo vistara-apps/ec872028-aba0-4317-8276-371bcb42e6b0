@@ -3,12 +3,29 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
+  :root {
+    /* Design system color tokens */
+    --background: 220 20% 12%;
+    --foreground: 220 20% 95%;
+    --primary: 220 90% 50%;
+    --secondary: 220 20% 16%;
+    --accent: 170 70% 45%;
+    --border: 220 20% 25%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 20% 75%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 220 20% 16%;
+    --ring: 220 90% 50%;
+    --radius: 8px;
   }
-  
+
+  * {
+    @apply border-gray-700;
+  }
+
   body {
-    @apply bg-bg text-textPrimary;
+    @apply bg-gray-900 text-gray-100;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -17,24 +34,24 @@
   .container {
     @apply max-w-3xl px-6 mx-auto;
   }
-  
+
   .card {
-    @apply bg-surface border border-border rounded-lg shadow-card;
+    @apply bg-gray-800 border border-gray-700 rounded-lg shadow-lg;
   }
-  
+
   .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors duration-200;
+    @apply bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200;
   }
-  
+
   .btn-secondary {
-    @apply bg-surface text-textPrimary border border-border px-4 py-2 rounded-md hover:bg-surface/80 transition-colors duration-200;
+    @apply bg-gray-800 text-gray-100 border border-gray-700 px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-200;
   }
-  
+
   .btn-outline {
-    @apply border border-border text-textPrimary px-4 py-2 rounded-md hover:bg-surface/50 transition-colors duration-200;
+    @apply border border-gray-700 text-gray-100 px-4 py-2 rounded-md hover:bg-gray-800 transition-colors duration-200;
   }
-  
+
   .input {
-    @apply bg-surface border border-border rounded-md px-3 py-2 text-textPrimary placeholder:text-textSecondary focus:outline-none focus:ring-2 focus:ring-primary/50;
+    @apply bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-gray-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
   }
 }

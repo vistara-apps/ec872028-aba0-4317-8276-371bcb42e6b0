@@ -54,7 +54,7 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
       <Card className="w-full max-w-md max-h-[90vh] overflow-y-auto">
         <div className="p-6 space-y-6">
           <div className="flex justify-between items-start">
-            <h2 className="text-xl font-semibold text-textPrimary">Cast Your Vote</h2>
+            <h2 className="text-xl font-semibold text-gray-100">Cast Your Vote</h2>
             <Button variant="outline" size="sm" onClick={onClose}>
               <X className="w-4 h-4" />
             </Button>
@@ -62,15 +62,15 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
 
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium text-textPrimary mb-2">{poll.question}</h3>
-              <p className="text-sm text-textSecondary">
+              <h3 className="font-medium text-gray-100 mb-2">{poll.question}</h3>
+              <p className="text-sm text-gray-400">
                 Select your preferred option and stake tokens to vote
               </p>
             </div>
 
             {/* Option Selection */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-textPrimary">Choose Option</label>
+              <label className="text-sm font-medium text-gray-100">Choose Option</label>
               <div className="space-y-2">
                 {poll.options.map((option, index) => (
                   <button
@@ -78,8 +78,8 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
                     onClick={() => setSelectedOption(option)}
                     className={`w-full p-3 text-left rounded-md border transition-colors duration-200 ${
                       selectedOption === option
-                        ? 'border-primary bg-primary/10 text-textPrimary'
-                        : 'border-border bg-surface/50 text-textSecondary hover:bg-surface'
+                        ? 'border-blue-500 bg-blue-500/10 text-gray-100'
+                        : 'border-gray-700 bg-gray-800/50 text-gray-400 hover:bg-gray-800'
                     }`}
                   >
                     {option}
@@ -90,7 +90,7 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
 
             {/* Token Selection */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-textPrimary">Stake Token</label>
+              <label className="text-sm font-medium text-gray-100">Stake Token</label>
               <div className="flex gap-2">
                 {Object.entries(SUPPORTED_TOKENS).map(([key, token]) => (
                   <Button
@@ -108,7 +108,7 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
 
             {/* Stake Amount */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-textPrimary">Stake Amount</label>
+              <label className="text-sm font-medium text-gray-100">Stake Amount</label>
               <Input
                 type="number"
                 placeholder="0.0"
@@ -117,36 +117,36 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
                 min="0.1"
                 step="0.1"
               />
-              <p className="text-xs text-textSecondary">
+              <p className="text-xs text-gray-400">
                 Minimum stake: 0.1 {selectedToken}
               </p>
             </div>
 
             {/* Voting Power Display */}
             {votingPower > 0 && (
-              <Card className="p-3 bg-primary/5 border-primary/20">
+              <Card className="p-3 bg-blue-500/5 border-blue-500/20">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium text-textPrimary">Voting Power</span>
+                    <TrendingUp className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm font-medium text-gray-100">Voting Power</span>
                   </div>
-                  <span className="text-sm font-semibold text-primary">
+                  <span className="text-sm font-semibold text-blue-500">
                     {formatTokenAmount(votingPower, 2)}
                   </span>
                 </div>
-                <p className="text-xs text-textSecondary mt-1">
+                <p className="text-xs text-gray-400 mt-1">
                   Based on your stake and reputation ({userReputation} points)
                 </p>
               </Card>
             )}
 
             {/* Security Notice */}
-            <Card className="p-3 bg-accent/5 border-accent/20">
+            <Card className="p-3 bg-green-500/5 border-green-500/20">
               <div className="flex items-start gap-2">
-                <Lock className="w-4 h-4 text-accent mt-0.5" />
+                <Lock className="w-4 h-4 text-green-500 mt-0.5" />
                 <div>
-                  <p className="text-xs font-medium text-textPrimary">Secure Voting</p>
-                  <p className="text-xs text-textSecondary">
+                  <p className="text-xs font-medium text-gray-100">Secure Voting</p>
+                  <p className="text-xs text-gray-400">
                     Your vote will be recorded on-chain and cannot be changed once submitted.
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export function VoteModal({ poll, onClose }: VoteModalProps) {
             <Button
               onClick={handleVote}
               disabled={!selectedOption || !stakeAmount || isSubmitting}
-              className="flex-1 bg-primary hover:bg-primary/90"
+              className="flex-1 bg-blue-600 hover:bg-blue-700"
             >
               {isSubmitting ? 'Submitting...' : 'Cast Vote'}
             </Button>
